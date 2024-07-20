@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --flag-width: 60vw;
+        }
+
+        .flag {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: var(--flag-width);
+            height: calc(var(--flag-width) / 3 * 2);
+            transform-origin: top left;
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+
+            box-shadow: 2px 2px 6px gray;
+
+            animation: turnAndChangeAspectRatio infinite linear alternate-reverse 2s;
+        }
+
+        .flag div {
+            flex: 1;
+        }
+
+        .flag div:first-of-type {
+            background-color: blue;
+            animation: blueToBlack infinite linear alternate-reverse 2s;
+        }
+
+        .flag div:nth-of-type(2n) {
+            background-color: white;
+            animation: whiteToRed infinite linear alternate-reverse 2s;
+        }
+
+        .flag div:last-of-type {
+            background-color: red;
+            animation: redToGold infinite linear alternate-reverse 2s;
+        }
+
+        @keyframes turnAndChangeAspectRatio {
+            from {
+                transform: rotate(0) translateY(0);
+
+                width: var(--flag-width);
+                height: calc(var(--flag-width) / 3 * 2);
+
+            }
+
+            to {
+                transform: rotate(90deg) translateY(calc(var(--flag-width) * -1));
+                height: var(--flag-width);
+                width: calc(var(--flag-width) / 5 * 3);
+            }
+        }
+
+        @keyframes blueToBlack {
+            from {
+                background-color: blue;
+            }
+            to {
+                background-color: black;
+            }
+        }
+
+        @keyframes whiteToRed {
+            from {
+                background-color: white;
+            }
+            to {
+                background-color: red;
+            }
+        }
+
+        @keyframes redToGold {
+            from {
+                background-color: red;
+            }
+            to {
+                background-color: gold;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="flag">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+</body>
+</html>
