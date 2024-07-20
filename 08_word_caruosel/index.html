@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        .flag {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 400px;
+            transform: translate(-50%, -50%);
+            font-weight: bold;
+            font-size: 2rem;
+            font-family: sans-serif;
+
+        }
+
+        .ilove::after {
+            content: '';
+            padding: 0.2rem 0.5rem;
+            background: purple;
+            border-radius: 8px;
+            color: white;
+            animation: showhide infinite 8s;
+        }
+
+        @keyframes showhide {
+            0% {
+                content: 'dogs';
+            }
+            25% {
+                content: 'cats';
+            }
+            50% {
+
+                content: 'all animals';
+            }
+            75% {
+                content: 'CSS';
+            }
+            100% {
+                content: 'dogs';
+            }
+        }
+
+    </style>
+</head>
+<body>
+<div class="carousel">
+    <span class="ilove">
+        I love
+    </span>
+</div>
+</body>
+</html>

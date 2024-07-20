@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --target-width: 60vh;
+        }
+
+        .target {
+            position: absolute;
+            margin: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--target-width);
+            height: var(--target-width);
+            background-color: black;
+
+        }
+
+        .ring {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        .ring > .ring {
+            width: calc(var(--target-width) * 0.75);
+            height: calc(var(--target-width) * 0.75);
+
+            background-color: lightblue;
+        }
+
+        .ring > .ring > .ring {
+            width: calc(var(--target-width) * 0.5);
+            height: calc(var(--target-width) * 0.5);
+            background-color: red;
+        }
+
+        .ring > .ring > .ring > .ring {
+            width: calc(var(--target-width) * 0.25);
+            height: calc(var(--target-width) * 0.25);
+
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<div class="target ring">
+    <div class="ring">
+        <div class="ring">
+            <div class="ring"></div>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
