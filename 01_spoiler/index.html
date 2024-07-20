@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --paraBackgroundColor: #EFEFEF;
+            --paraFontColor: #111111;
+            --spoilerColor: purple;
+        }
+
+        .post p {
+            line-height: 1.5em;
+            display: block;
+            padding: 1.5rem 1rem;
+            background-color: var(--paraBackgroundColor);
+            color: var(--paraFontColor);
+            border-radius: 16px;
+            font-family: sans-serif;
+        }
+
+        .spoiler {
+            cursor: default;
+
+            /*background-color: currentColor;*/ /* same as text color */
+            /* but we might want to have the spoiler a different color than the text around */
+            background-color: var(--spoilerColor);
+            color: var(--spoilerColor);
+
+            transition: all 0.5s 0.2s ease-in-out;
+            padding: 0 2px;
+        }
+
+        .spoiler:hover {
+            background-color: initial; /* same as containing background color */
+            color: initial;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="post">
+    <p>In the 1968 film Planet of the Apes, they find
+        <span class="spoiler">the ruins
+                    of the Statue of Liberty. The Plant of the
+                    Apes is Earth!</span>
+    </p>
+</div>
+<div class="post">
+    <p>Soylent Green
+        <span class="spoiler">is made of people!</span>
+    </p>
+</div>
+<div class="post">
+    <p>OMG I can't believe that Darth Vadar is
+        <span class="spoiler">Luke Skywalker's father!</span>
+    </p>
+</div>
+</body>
+</html>

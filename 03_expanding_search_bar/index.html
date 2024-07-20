@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .search-input-container {
+            width: 400px;
+            margin: 20px auto auto 20px;
+            background: silver;
+            padding: 8px;
+        }
+
+        /* still visible for screen readers */
+        .hide {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        label[for="search-input"] {
+            display: none;
+        }
+
+        .search-input {
+            font-size: 1.5rem;
+            border-color: gray;
+            border-radius: 4px;
+            outline: none;
+            width: 33%;
+            box-shadow: none;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: lightblue;
+            width: 98%;
+        }
+
+        .search-input:focus::placeholder {
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+<div class="search-input-container">
+    <label for="search-input" class="hide">Search</label>
+    <input id="search-input" type="text" class="search-input" placeholder="Search..."/>
+</div>
+</body>
+</html>

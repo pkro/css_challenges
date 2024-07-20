@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --button-text-color: #DDD;
+            --button-text-color-hovered: white;
+        }
+
+        /* still visible for screen readers */
+        .hide {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 92vh; /* 100vh would be more correct, but creates a scrollbar sometimes and slightly above center simply looks better */
+            background: #121212;
+        }
+
+        .button-border {
+            font-size: 2rem;
+            background: black;
+            color: var(--button-text-color);
+            outline: none;
+            padding: 2rem 3rem;
+            border: 4px solid transparent;
+            background: linear-gradient(115deg, black, black),
+            linear-gradient(115deg, orange, purple);
+            background-clip: padding-box, /*for first background*/ border-box; /* second background */
+            background-origin: padding-box, border-box;
+            letter-spacing: 0.1em;
+        }
+
+        .button-border:hover {
+            transform: scale(1.02);
+            color: var(--button-text-color-hovered);
+            background: linear-gradient(to right, black, black),
+            linear-gradient(to right, purple, orange);
+            /* why do I have to repeat this for it to work correctly? */
+            background-clip: padding-box, border-box;
+            background-origin: padding-box, border-box;
+        }
+    </style>
+</head>
+<body>
+<button class="button-border">
+    Start Coding!
+</button>
+
+</body>
+</html>
