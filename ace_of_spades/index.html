@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --card-width: 400px;
+            --card-symbolbox-width: calc(var(--card-width) / 6);
+            --card-symbol-size-small: calc(var(--card-width) / 6);
+            --card-symbol-size-large: calc(var(--card-width) / 3);
+            --card-text-size: calc(var(--card-width) / 12); /* the "A"s */
+
+        }
+
+        .progress-bar {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: var(--card-width);
+            height: calc(var(--card-width) / 2 * 3);
+            border: 1px solid black;
+            border-radius: calc(var(--card-width) / 30);
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            line-height: 1;
+            padding: 1%;
+        }
+
+        .progress-bar > div {
+            flex: 1; /* stretch all evenly */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .progress-bar > div > div:first-of-type {
+            font-size: var(--card-text-size);
+        }
+
+        .progress-bar > div > div:last-of-type {
+            font-size: var(--card-symbol-size-small);
+        }
+
+        .progress-bar .center {
+            font-size: calc(var(--card-symbol-size-large));
+            align-items: center;
+            justify-content: center;
+        }
+
+        .progress-bar .bottom > div, .progress-bar .top > div{
+            width: var(--card-symbolbox-width);
+            text-align: center;
+        }
+
+        .progress-bar .bottom {
+            transform: rotate(180deg);
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="ace-of-spades">
+    <div class="top">
+        <div>A</div>
+        <div>&spades;</div>
+    </div>
+    <div class="center">&spades;</div>
+    <div class="bottom">
+        <div>A</div>
+        <div>&spades;</div>
+    </div>
+</div>
+
+</body>
+</html>

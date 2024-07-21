@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --progress-bar-width: 400px;
+            --progress-bar-height: calc(var(--progress-bar-width) / 8);
+        }
+
+        .someDiv {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .progress-bar {
+            width: var(--progress-bar-width);
+            height: var(--progress-bar-height);
+            border: 1px solid black;
+            border-radius: calc(var(--progress-bar-width) / 30);
+            background: linear-gradient(to right, blue 0%, orange 0%);
+        }
+
+        .progress-bar[data-stage^="1"] /* 10, 11, ... */
+        {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 10%, white 12%, white 100%);
+        }
+
+        .progress-bar[data-stage^="2"] /* 20, 21, ... */
+        {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 20%, white 22%, white 100%);
+        }
+
+        .progress-bar[data-stage^="3"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 30%, white 32%, white 100%);
+        }
+
+        .progress-bar[data-stage^="4"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 40%, white 42%, white 100%);
+        }
+
+        .progress-bar[data-stage^="5"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 50%, white 52%, white 100%);
+        }
+
+        .progress-bar[data-stage^="6"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 60%, white 62%, white 100%);
+        }
+
+        .progress-bar[data-stage^="7"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 70%, white 72%, white 100%);
+        }
+
+        .progress-bar[data-stage^="8"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 80%, white 82%, white 100%);
+        }
+
+        .progress-bar[data-stage^="9"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 90%, white 92%, white 100%);
+        }
+
+        .progress-bar[data-stage="1"],
+        .progress-bar[data-stage="2"],
+        .progress-bar[data-stage="3"],
+        .progress-bar[data-stage="4"],
+        .progress-bar[data-stage="5"],
+        .progress-bar[data-stage="6"],
+        .progress-bar[data-stage="7"],
+        .progress-bar[data-stage="8"],
+        .progress-bar[data-stage="9"] {
+            background: linear-gradient(to right, forestgreen 0%, forestgreen 5%, white 7%, white 100%);
+
+        }
+
+        .progress-bar[data-stage="0"] {
+            background: white;
+        }
+
+        .progress-bar[data-stage="100"] {
+            background: forestgreen;
+            animation: joy ease-in-out 0.4s;
+        }
+
+        .progress-bar:after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            content: attr(data-stage) '%';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            font-size: calc(var(--progress-bar-height) * 0.6);
+            font-family: sans-serif;
+            color: #444444;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+            padding: 0 6px;
+            height: calc(var(--progress-bar-height) * 0.8);
+        }
+
+        .progress-bar[data-stage="100"]:after {
+            content: 'Done!';
+            background: none;
+            color: white;
+        }
+
+        @keyframes joy {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="someDiv">
+    <div class="progress-bar" data-stage="0"></div>
+</div>
+<script>
+    let currentStage = 0;
+    const interval = setInterval(() => {
+        document.querySelector('.progress-bar').setAttribute('data-stage', `${currentStage % 100}`);
+        const addPercent = currentStage < 70 ? 5 : 2;
+        currentStage += addPercent;
+        if (currentStage >= 100) {
+            document.querySelector('.progress-bar').setAttribute('data-stage', `100`);
+            clearInterval(interval);
+        }
+    }, 120);
+</script>
+</body>
+</html>

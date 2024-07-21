@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .toggle-switch, label[for="toggle-switch"] {
+            cursor: pointer;
+        }
+        .toggle-switch {
+            border: none;
+            background: none;
+            position: relative;
+        }
+        .toggle-switch:before {
+            content: '';
+            position: absolute;
+            top: -4px;
+            left: -4px;
+            width: 48px;
+            height: 24px;
+            border: 2px solid black;
+            border-radius: 16px;
+            background-color: white;
+        }
+
+        .toggle-switch:checked {
+
+        }
+
+        .toggle-switch:after {
+            content: '';
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: black;
+            position: absolute;
+            transition: all 0.2s linear;
+        }
+
+        .toggle-switch:checked:after {
+            left: 24px;
+        }
+    </style>
+</head>
+<body>
+<label for="toggle-switch">check me:</label>
+<input id="toggle-switch" type="checkbox" class="toggle-switch">
+
+</body>
+</html>
