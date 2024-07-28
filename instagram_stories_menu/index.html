@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+
+        :root {
+            --circle-size: 120px;
+            --inner-circle-size: calc(var(--circle-size)*0.86);
+            --inner-black-border-size: calc(var(--circle-size) / 24);
+            --font-size: calc(var(--circle-size) / 5);
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+            background-color: black;
+            color: #EFEFEF;
+        }
+        .stories-menu {
+            display: flex;
+            flex-direction: row;
+            gap: calc(var(--circle-size)*0.5);
+        }
+
+        .stories-menu p {
+            font-family: sans-serif;
+            font-size: var(--font-size);
+            letter-spacing: 1px;
+        }
+
+        .stories-menu {
+            list-style-type: none;
+        }
+
+        .stories-menu li {
+            margin-left: 0;
+        }
+
+        .story {
+            text-align: center;
+        }
+
+        .img-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--circle-size);
+            height: var(--circle-size);
+            border-radius: 50%;
+            background-image: linear-gradient(45deg, orange, green);
+        }
+
+        .img-wrapper img {
+            width: var(--inner-circle-size);
+            height: var(--inner-circle-size);
+            border: var(--inner-black-border-size) solid black;
+            border-radius: 50%;
+        }
+
+        .viewed .img-wrapper {
+            background: gray;
+        }
+
+        .live .img-wrapper {
+            background: gray;
+            position: relative;
+        }
+
+        .live .img-wrapper:before {
+            content: 'LIVE';
+            font-weight: bold;
+            font-family: sans-serif;
+            position: absolute;
+            width: min-content;
+            text-align: center;
+            letter-spacing: 1px;
+            transform: translate(-50%,0);
+            border: var(--inner-black-border-size) solid black;
+            left: 50%;
+            bottom: calc(var(--circle-size) / 6 * -1);
+            padding: 3px 3px 2px 3px;
+            border-radius: 3px;
+            background-color: orangered;
+        }
+    </style>
+</head>
+<body>
+<ul class="stories-menu">
+    <li class="story new">
+        <div class="img-wrapper">
+            <img class="img" alt="profile-pic" src="https://picsum.photos/200?random=1"/>
+        </div>
+        <p>Julian</p>
+    </li>
+    <li class="story viewed live">
+        <div class="img-wrapper">
+            <img class="img" alt="profile-pic" src="https://picsum.photos/200?random=2"/>
+        </div>
+        <p>Scrimdella</p>
+    </li>
+    <li class="story new">
+        <div class="img-wrapper">
+            <img class="img" alt="profile-pic" src="https://picsum.photos/200?random=3"/>
+        </div>
+        <p>Gumdrop</p>
+    </li>
+</ul>
+</body>
+</html>

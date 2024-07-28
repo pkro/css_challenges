@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .card {
+            font-family: sans-serif;
+            position: relative;
+            width: 400px;
+            height: 300px;
+            transform-origin: center center;
+            perspective: 200px;
+            transform-style: preserve-3d;
+            transition: all ease-in-out 1s;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            background-color: blue;
+            color: white;
+            font-size: 24px;
+            border-radius: 10px;
+            box-shadow: 8px 8px 16px dodgerblue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px;
+            height: 300px;
+            text-align: center;
+            backface-visibility: hidden;
+        }
+
+        .card-back {
+            transform: rotateY(180deg);
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="card">
+    <div class="card-front">
+        <h2>This now deprecated HTML tag, popular
+            in the early days of the internet, magically made text
+            scroll across the screen
+        </h2>
+    </div>
+    <div class="card-back">
+        <h2>What is the marquee tag</h2>
+    </div>
+</div>
+</body>
+</html>

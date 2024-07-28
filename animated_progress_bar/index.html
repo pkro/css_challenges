@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --progress-bar-width: 320px;
+            --bar-border-radius: 999px;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 98vh;
+        }
+
+        .progress-bar, .progress-bar:before {
+            position: relative;
+            background: silver;
+            height: calc(var(--progress-bar-width) * 0.1);
+            width: var(--progress-bar-width);
+            border-radius: var(--bar-border-radius);
+        }
+
+        .progress-bar:before {
+            background: red;
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            animation: progressbar linear infinite 3s;
+        }
+
+        @keyframes progressbar {
+            0% {
+                background: red;
+                width: 0;
+            }
+            30% {
+                background: blue;
+                width: 50%;
+            }
+            60%, 100% {
+                background: green;
+                width: var(--progress-bar-width);
+
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="progress-bar"></div>
+</body>
+</html>

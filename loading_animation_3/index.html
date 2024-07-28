@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --loader-size: 200px;
+        }
+
+        .loader {
+            position: absolute;
+            top: calc(50% - calc(var(--loader-size) * 0.5));
+            left: calc(50% - calc(var(--loader-size) * 0.5));
+            background-color: white;
+            width: var(--loader-size);
+            height: var(--loader-size);
+            border: calc(var(--loader-size) * 0.15) solid silver;
+            border-top-color: purple;
+            border-radius: 50%;
+            animation: rotate infinite linear 2s;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(359deg);
+            }
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="loader"></div>
+</body>
+</html>
